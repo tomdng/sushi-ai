@@ -10,6 +10,12 @@ const Styled404Wrapper: AnyStyledComponent = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
+  h1,
+  p {
+    max-width: 90vw;
+    text-align: center;
+  }
 `
 
 const NotFoundPage = (): JSX.Element => (
