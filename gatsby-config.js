@@ -46,11 +46,15 @@ module.exports = {
     {
       resolve: `gatsby-plugin-styled-components`,
     },
-    // FIXME: The excludes option doesn't seem to be working
     {
       resolve: `gatsby-plugin-sitemap`,
       options: {
         excludes: ['/menu/'],
+        serialize: ({ path }) => {
+          return {
+            url: path,
+          }
+        },
       },
     },
   ],
