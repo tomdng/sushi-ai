@@ -3,13 +3,14 @@ import styled, { AnyStyledComponent } from 'styled-components'
 
 const StyledNoticeBar: AnyStyledComponent = styled.div`
   width: 100vw;
+  padding: 1rem 2rem;
   background: #393e41;
   display: flex;
   justify-content: center;
   align-items: center;
 
   h1 {
-    font-size: 16px;
+    font-size: 20px;
     text-align: center;
     margin: 1rem 0.5rem;
   }
@@ -17,7 +18,7 @@ const StyledNoticeBar: AnyStyledComponent = styled.div`
 
 const Notice = (): JSX.Element => (
   <StyledNoticeBar>
-    <h1>UPDATE: We are now open for dine in!</h1>
+    <h1>HOLIDAY HOURS: We will be closed on day this year on Thanksgiving.</h1>
   </StyledNoticeBar>
 )
 

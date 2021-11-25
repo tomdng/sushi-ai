@@ -35,8 +35,8 @@ const MenuNotice: React.FC<MenuNoticeProps> = ({ lunch, dinner }) => {
             sushi, and 1 appetizer.
           </h2>
           <h2>
-            Lunch all you can eat is $12.99 for standard and $15.99 for premium
-            (additional) items.
+            Lunch all you can eat is $15.99 for standard and with premium items
+            at additional cost.
           </h2>
         </>
       ) : null}
@@ -47,7 +47,7 @@ const MenuNotice: React.FC<MenuNoticeProps> = ({ lunch, dinner }) => {
             sushi, and 1 appetizer.
           </h2>
           <h2>
-            Dinner all you can eat is $21.98 for standard and is an additional
+            Dinner all you can eat is $23.99 for standard and is an additional
             +$4.98 for premium (additional) items.
           </h2>
         </>
