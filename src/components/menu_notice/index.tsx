@@ -16,16 +16,18 @@ const NoticeText: AnyStyledComponent = styled.div`
 `
 
 interface MenuNoticeProps {
-  lunch: boolean
+  lunch?: boolean
+  dinner?: boolean
 }
 
-const MenuNotice: React.FC<MenuNoticeProps> = ({ lunch }) => {
+const MenuNotice: React.FC<MenuNoticeProps> = ({ lunch, dinner }) => {
   return (
     <NoticeText>
-      <h2>
-        Notice: Sushi Ai Manchester is currently take-out only. Please call in
-        your order if you want to place a custom order or order online.
-      </h2>
+      <h2>Menu last updated: 11/24/21</h2>
+      <p>
+        We need some time to update prices on the website. Please let us know if
+        we forget to update an item!
+      </p>
       {lunch ? (
         <>
           <h2>
@@ -37,7 +39,8 @@ const MenuNotice: React.FC<MenuNoticeProps> = ({ lunch }) => {
             (additional) items.
           </h2>
         </>
-      ) : (
+      ) : null}
+      {dinner ? (
         <>
           <h2>
             The to-go option for all-you-can-eat lunch includes 3 rolls, 4 pcs
@@ -48,7 +51,7 @@ const MenuNotice: React.FC<MenuNoticeProps> = ({ lunch }) => {
             +$4.98 for premium (additional) items.
           </h2>
         </>
-      )}
+      ) : null}
     </NoticeText>
   )
 }

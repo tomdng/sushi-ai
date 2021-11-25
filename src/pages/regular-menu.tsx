@@ -3,6 +3,7 @@ import { graphql } from 'gatsby'
 import styled, { AnyStyledComponent } from 'styled-components'
 
 import { Banner } from '../components/banner'
+import { MenuNotice } from '../components/menu_notice'
 import { MenuSection } from '../components/menu_section'
 import { MenuTableOfContents } from '../components/menu_table_contents'
 
@@ -48,6 +49,7 @@ const RegularMenuPage: React.FC<MenuQueryTypes> = ({ data }): JSX.Element => {
           height="350px"
           position="center"
         />
+        <MenuNotice />
         <MenuTableOfContents name="Regular Menu" categories={categories} />
         {categories.map((category: CategoryType) => (
           <MenuSection
