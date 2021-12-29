@@ -81,7 +81,7 @@ const FindUsPage = (): JSX.Element => {
         <Banner
           text="Find Us"
           image={bannerImage}
-          height="300px"
+          height="500px"
           position="center top"
         />
         <Content>

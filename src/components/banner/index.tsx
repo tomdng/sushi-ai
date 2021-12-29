@@ -22,12 +22,14 @@ const BannerBox: AnyStyledComponent = styled.div<BannerStyleProps>`
 `
 
 const BannerText: AnyStyledComponent = styled.h1`
+  margin-top: 128px;
   font-size: 48px;
   font-weight: normal;
   max-width: 612px;
   text-align: center;
 
   @media (max-width: 700px) {
+    margin-top: 250px;
     font-size: 36px;
     width: 250px;
   }

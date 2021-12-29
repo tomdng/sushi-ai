@@ -18,7 +18,7 @@ const StyledNoticeBar: AnyStyledComponent = styled.div`
 
 const Notice = (): JSX.Element => (
   <StyledNoticeBar>
-    <h1>HOLIDAY HOURS: We will be closed on day this year on Thanksgiving.</h1>
+    <h1>HOLIDAY HOURS: We will be open for Christmas and New Years during regular hours!</h1>
   </StyledNoticeBar>
 )
 

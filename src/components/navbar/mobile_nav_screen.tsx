@@ -87,7 +87,7 @@ const MobileNavScreen: React.FC<NavScreenProps> = (props): JSX.Element => {
             </CloseIcon>
           </MobileNavHeader>
           <MobileNavContent>
-            <PageLink to="/menu" onClick={(): void => closeFunction()}>
+            <PageLink to="/menu-select" onClick={(): void => closeFunction()}>
               MENU
             </PageLink>
             <PageLink to="/find-us" onClick={(): void => closeFunction()}>
