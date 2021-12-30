@@ -65,7 +65,7 @@ const AboutPage: React.FC = (): JSX.Element => {
         />
         <AboutContent>
           <p>
-            Sushi Ai Manchester is a local restaurant located in Ballwin
+            Sushi Ai Manchester is a local restaurant located in Ballwin,
             Missouri at the Lafayette Center plaza.
           </p>
           <p>

@@ -46,7 +46,7 @@ const IndexPage = (): JSX.Element => {
       <HomePage>
         <HomeBanner
           image={img}
-          text="Delicious Japanese cuisine in Manchester"
+          text="Delicious Japanese Cuisine in Manchester"
         />
         <InfoSection>
           <PageBlock
