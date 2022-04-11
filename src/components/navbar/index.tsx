@@ -6,7 +6,6 @@ import { faBars } from '@fortawesome/free-solid-svg-icons'
 
 import { ButtonSmall } from '../button_small'
 import { MobileNavScreen } from './mobile_nav_screen'
-import { Notice } from './notice'
 
 const Nav: AnyStyledComponent = styled.div`
   background-color: transparent;
@@ -86,7 +85,6 @@ const Navbar: React.FC = (): JSX.Element => {
 
   return (
     <Nav>
-      <Notice />
       <NavWrap>
         <Title to="/">Sushi Ai</Title>
         <Navigation>

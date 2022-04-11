@@ -23,7 +23,7 @@ interface MenuNoticeProps {
 const MenuNotice: React.FC<MenuNoticeProps> = ({ lunch, dinner }) => {
   return (
     <NoticeText>
-      <h2>Menu last updated: 11/24/21</h2>
+      <h2>Menu last updated: April 5th, 2022</h2>
       <p>
         We need some time to update prices on the website. Please let us know if
         we forget to update an item!
