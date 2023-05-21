@@ -3,10 +3,6 @@
         <img src="misc/homepage.png" />
     </a>
     <br />
-    <br />
-    <a href="https://sushiaimanchester.com/">
-        <img src="misc/menu.png" />
-    </a>
     <h3 align="center">Sushi Ai Manchester</h3>
     <p align="center">Website I designed and built for a local Sushi Restaurant. Made with Typescript React. <a href="https://sushiaimanchester.com/">See it live here.</a></p>
 </div>
