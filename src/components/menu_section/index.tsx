@@ -71,32 +71,30 @@ const MenuSection: React.FC<MenuSectionProps> = ({
   menuType,
 }) => {
   const dishQuery = useStaticQuery(
-    graphql`
-      query allDishesQuery {
-        regularData: allMenuXlsxDishes(sort: { fields: order, order: ASC }) {
-          nodes {
-            name
-            description
-            price
-            category
-          }
-        }
-        lunchData: allMenuXlsxLunchAll(sort: { order: ASC, fields: order }) {
-          nodes {
-            name
-            description
-            category
-          }
-        }
-        dinnerData: allMenuXlsxDinnerAll(sort: { order: ASC, fields: order }) {
-          nodes {
-            name
-            description
-            category
-          }
-        }
-      }
-    `
+    graphql`query allDishesQuery {
+  regularData: allMenuXlsxDishes(sort: {order: ASC}) {
+    nodes {
+      name
+      description
+      price
+      category
+    }
+  }
+  lunchData: allMenuXlsxLunchAll(sort: {order: ASC}) {
+    nodes {
+      name
+      description
+      category
+    }
+  }
+  dinnerData: allMenuXlsxDinnerAll(sort: {order: ASC}) {
+    nodes {
+      name
+      description
+      category
+    }
+  }
+}`
   )
 
   // Default to dishes from the regular menu unless the menutype is a

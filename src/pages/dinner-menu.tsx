@@ -72,18 +72,16 @@ const DinnerMenuPage: React.FC<MenuQueryTypes> = ({ data }): JSX.Element => {
   )
 }
 
-export const lunchMenuQuery = graphql`
-  query dinnerMenuQuery {
-    dinnerCategories: allMenuXlsxCategories(
-      filter: { menu: { eq: "dinner" } }
-      sort: { order: ASC, fields: order }
-    ) {
-      nodes {
-        description
-        name
-      }
+export const lunchMenuQuery = graphql`query dinnerMenuQuery {
+  dinnerCategories: allMenuXlsxCategories(
+    filter: {menu: {eq: "dinner"}}
+    sort: {order: ASC}
+  ) {
+    nodes {
+      description
+      name
     }
   }
-`
+}`
 
 export default DinnerMenuPage
