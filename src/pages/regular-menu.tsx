@@ -69,18 +69,16 @@ const RegularMenuPage: React.FC<MenuQueryTypes> = ({ data }): JSX.Element => {
   )
 }
 
-export const regularMenuQuery = graphql`
-  query regularMenuQuery {
-    regularCategories: allMenuXlsxCategories(
-      filter: { menu: { eq: "regular" } }
-      sort: { order: ASC, fields: order }
-    ) {
-      nodes {
-        description
-        name
-      }
+export const regularMenuQuery = graphql`query regularMenuQuery {
+  regularCategories: allMenuXlsxCategories(
+    filter: {menu: {eq: "regular"}}
+    sort: {order: ASC}
+  ) {
+    nodes {
+      description
+      name
     }
   }
-`
+}`
 
 export default RegularMenuPage
