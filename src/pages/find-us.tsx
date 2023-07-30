@@ -92,13 +92,13 @@ const FindUsPage = (): JSX.Element => {
             </TextGroup>
             <TextGroup>
               <Text>Mon - Thur | 11:00 - 9:30</Text>
-              <Text>Fri - Sat | 11:00 - 10:00</Text>
+              <Text>Fri - Sat | 11:00 - 10:30</Text>
               <Text>Sunday | 11:30 - 9:30</Text>
             </TextGroup>
             <Text>(636) 527-9990</Text>
             <TextGroup>
               <Text>Questions and Concerns</Text>
-              <Text>contact@sushiai.com</Text>
+              <Text>sushiaimanchester@gmail.com</Text>
             </TextGroup>
           </TextInfo>
           <Map />
