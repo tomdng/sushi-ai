@@ -23,21 +23,23 @@ interface MenuNoticeProps {
 const MenuNotice: React.FC<MenuNoticeProps> = ({ lunch, dinner }) => {
   return (
     <NoticeText>
-      <h2>Menu last updated: May 21st, 2023</h2>
       <p>
-        We need some time to update prices on the website. Please let us know if
-        we forget to update an item!
+        <i>Last updated: Nov 26th, 2023</i>
       </p>
       {lunch ? (
         <>
           <h2>
+            Lunch all you can eat is $15.99 for standard (or with premium items
+            at additional cost).
+          </h2>
+          <h3>
+            The lunch menu is only available Monday through Saturday 11:00 to
+            3:00 PM!
+          </h3>
+          <h3>
             The to-go option for all-you-can-eat lunch includes 2 rolls, 2 pcs
             sushi, and 1 appetizer.
-          </h2>
-          <h2>
-            Lunch all you can eat is $15.99 for standard and with premium items
-            at additional cost.
-          </h2>
+          </h3>
         </>
       ) : null}
       {dinner ? (
