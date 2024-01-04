@@ -22,7 +22,7 @@ const MobileNav: AnyStyledComponent = styled.nav`
   background-color: #2c271d;
   display: flex;
   flex-direction: column;
-  height: 60vh;
+  height: 90vh;
   width: 90vw;
 `
 
@@ -46,9 +46,10 @@ const CloseIcon: AnyStyledComponent = styled.div`
 const MobileNavContent: AnyStyledComponent = styled.nav`
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
-  height: 75%;
+  gap: 2rem;
+  height: calc(100% - 100px);
 
   a {
     font-size: 24px;
@@ -83,6 +84,7 @@ const MobileNavScreen: React.FC<NavScreenProps> = (props): JSX.Element => {
               <FontAwesomeIcon
                 icon={faTimes}
                 onClick={(): void => closeFunction()}
+                size="2x"
               />
             </CloseIcon>
           </MobileNavHeader>

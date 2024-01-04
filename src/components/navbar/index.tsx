@@ -21,13 +21,9 @@ const Nav: AnyStyledComponent = styled.div`
 const NavWrap: AnyStyledComponent = styled.nav`
   display: flex;
   justify-content: space-around;
-  align-items: baseline;
+  align-items: center;
   margin: 20px 50px 20px 50px;
   width: 100%;
-
-  @media (max-width: 1000px) {
-    align-items: center;
-  }
 `
 
 const PageLink: AnyStyledComponent = styled(Link)`
@@ -59,7 +55,7 @@ const Navigation: AnyStyledComponent = styled.div`
   justify-content: center;
   align-items: center;
 
-  @media (max-width: 700px) {
+  @media (max-width: 1000px) {
     display: none;
   }
 `
@@ -73,10 +69,10 @@ const MobileButton: AnyStyledComponent = styled.a`
     color: #e6e6e6;
   }
 
-  @media (max-width: 700px) {
+  @media (max-width: 1000px) {
     display: flex;
-    height: 40px;
-    margin-top: 8px;
+    justify-content: center;
+    align-items: center;
   }
 `
 
@@ -98,7 +94,7 @@ const Navbar: React.FC = (): JSX.Element => {
           />
         </Navigation>
         <MobileButton onClick={(): void => setOpen(true)}>
-          <FontAwesomeIcon icon={faBars} />
+          <FontAwesomeIcon icon={faBars} size="2x" />
         </MobileButton>
       </NavWrap>
       <MobileNavScreen open={open} closeFunction={(): void => setOpen(false)} />
