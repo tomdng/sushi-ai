@@ -1,5 +1,7 @@
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import React from 'react'
 import styled, { AnyStyledComponent } from 'styled-components'
+import { faCaretDown, faCaretUp } from '@fortawesome/free-solid-svg-icons'
 
 interface StylePriceProps {
   price: string
@@ -35,6 +37,13 @@ const SectionTitleWrapper: AnyStyledComponent = styled.div<StylePriceProps>`
   }
 `
 
+const TitleWrapper: AnyStyledComponent = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  gap: 16px;
+`
+
 const TitleDescWrapper: AnyStyledComponent = styled.div<StylePriceProps>`
   display: flex;
   flex-direction: column;
@@ -52,13 +61,28 @@ interface TitleProps {
   title: string
   desc?: string
   extraPrice?: string
+  isSectionOpen: boolean
+  onClickHandler: () => void
 }
 
-const SectionTitle: React.FC<TitleProps> = ({ title, desc, extraPrice }) => {
+const SectionTitle: React.FC<TitleProps> = ({
+  title,
+  desc,
+  extraPrice,
+  isSectionOpen,
+  onClickHandler,
+}) => {
   return (
-    <SectionTitleWrapper id={title}>
+    <SectionTitleWrapper id={title} onClick={onClickHandler}>
       <TitleDescWrapper>
-        <h1>{title}</h1>
+        <TitleWrapper>
+          <h1>{title}</h1>
+          {isSectionOpen ? (
+            <FontAwesomeIcon icon={faCaretDown} size="2x" />
+          ) : (
+            <FontAwesomeIcon icon={faCaretUp} size="2x" />
+          )}
+        </TitleWrapper>
         {desc ? <p>{desc}</p> : null}
       </TitleDescWrapper>
       {extraPrice ? <h1>{extraPrice}</h1> : null}
