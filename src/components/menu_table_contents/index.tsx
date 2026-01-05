@@ -1,7 +1,9 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled, { AnyStyledComponent } from 'styled-components'
 
 import { CategoryType } from '../../shared-types'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCaretDown, faCaretUp } from '@fortawesome/free-solid-svg-icons'
 
 const TableWrapper: AnyStyledComponent = styled.div`
   display: flex;
@@ -16,10 +18,17 @@ const TableWrapper: AnyStyledComponent = styled.div`
   }
 `
 
+const TitleWithExpandIcon = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  gap: 16px;
+`
+
 const Title: AnyStyledComponent = styled.h1`
   font-size: 48px;
   font-weight: normal;
-  margin: 0;
+  margin-bottom: 8px;
 `
 
 const Desc: AnyStyledComponent = styled.p`
@@ -73,6 +82,7 @@ interface TableProps {
 
 const MenuTableOfContents: React.FC<TableProps> = (props): JSX.Element => {
   const { name, categories } = props
+  const [isContentsOpen, setIsContentsOpen] = useState(true)
 
   const sectionList = categories.map(category => {
     return (
@@ -84,10 +94,19 @@ const MenuTableOfContents: React.FC<TableProps> = (props): JSX.Element => {
 
   return (
     <TableWrapper id={name}>
-      <Title>Contents</Title>
-      <Desc>Click to navigate to a certain section</Desc>
+      <div onClick={() => setIsContentsOpen(isContentOpen => !isContentOpen)}>
+        <TitleWithExpandIcon>
+          <Title>Contents</Title>
+          {isContentsOpen ? (
+            <FontAwesomeIcon icon={faCaretDown} size="2x" />
+          ) : (
+            <FontAwesomeIcon icon={faCaretUp} size="2x" />
+          )}
+        </TitleWithExpandIcon>
+        <Desc>Click to navigate to other sections</Desc>
+      </div>
       <Divider />
-      <SectionListWrapper>{sectionList}</SectionListWrapper>
+      {isContentsOpen && <SectionListWrapper>{sectionList}</SectionListWrapper>}
     </TableWrapper>
   )
 }

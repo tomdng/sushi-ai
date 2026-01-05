@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
 import styled, { AnyStyledComponent } from 'styled-components'
 
@@ -70,31 +70,35 @@ const MenuSection: React.FC<MenuSectionProps> = ({
   sectionDesc,
   menuType,
 }) => {
+  const [isSectionOpen, setIsSectionOpen] = useState(true)
+
   const dishQuery = useStaticQuery(
-    graphql`query allDishesQuery {
-  regularData: allMenuXlsxDishes(sort: {order: ASC}) {
-    nodes {
-      name
-      description
-      price
-      category
-    }
-  }
-  lunchData: allMenuXlsxLunchAll(sort: {order: ASC}) {
-    nodes {
-      name
-      description
-      category
-    }
-  }
-  dinnerData: allMenuXlsxDinnerAll(sort: {order: ASC}) {
-    nodes {
-      name
-      description
-      category
-    }
-  }
-}`
+    graphql`
+      query allDishesQuery {
+        regularData: allMenuXlsxDishes(sort: { order: ASC }) {
+          nodes {
+            name
+            description
+            price
+            category
+          }
+        }
+        lunchData: allMenuXlsxLunchAll(sort: { order: ASC }) {
+          nodes {
+            name
+            description
+            category
+          }
+        }
+        dinnerData: allMenuXlsxDinnerAll(sort: { order: ASC }) {
+          nodes {
+            name
+            description
+            category
+          }
+        }
+      }
+    `
   )
 
   // Default to dishes from the regular menu unless the menutype is a
@@ -114,21 +118,28 @@ const MenuSection: React.FC<MenuSectionProps> = ({
 
   return (
     <MenuSectionWrapper>
-      <SectionTitle title={sectionTitle} desc={sectionDesc} />
+      <SectionTitle
+        title={sectionTitle}
+        desc={sectionDesc}
+        isSectionOpen={isSectionOpen}
+        onClickHandler={() => setIsSectionOpen(isSectionOpen => !isSectionOpen)}
+      />
       <Divider />
-      <ItemGroupWrapper>
-        {dishes.map((dish: DishType) => {
-          return (
-            <div key={dish.name}>
-              <MenuItem
-                name={dish.name}
-                price={dish.price}
-                desc={dish.description}
-              />
-            </div>
-          )
-        })}
-      </ItemGroupWrapper>
+      {isSectionOpen && (
+        <ItemGroupWrapper>
+          {dishes.map((dish: DishType) => {
+            return (
+              <div key={dish.name}>
+                <MenuItem
+                  name={dish.name}
+                  price={dish.price}
+                  desc={dish.description}
+                />
+              </div>
+            )
+          })}
+        </ItemGroupWrapper>
+      )}
       <BackToTop href={`#${menuType}`}>Back to top</BackToTop>
     </MenuSectionWrapper>
   )
