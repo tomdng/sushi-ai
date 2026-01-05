@@ -16,13 +16,6 @@ const StyledPage: AnyStyledComponent = styled.div`
 
 const StyledMain: AnyStyledComponent = styled.main``
 
-const StyledAlert: AnyStyledComponent = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: baseline;
-  text-align: center;
-`
-
 interface LayoutProps {
   children: React.ReactNode
 }
@@ -31,15 +24,6 @@ const Layout: React.FC<LayoutProps> = ({ children }): JSX.Element => {
   return (
     <>
       <StyledPage>
-        <StyledAlert>
-          <p>
-            We're hiring! Please email us at{' '}
-            <a href="mailto:sushiaimanchester@gmail.com">
-              sushiaimanchester@gmail.com
-            </a>{' '}
-            for more information
-          </p>
-        </StyledAlert>
         <Navbar />
         <StyledMain>{children}</StyledMain>
         <Footer />
